@@ -145,8 +145,8 @@ export function QrPreviewDialog({
 
         <div className="grid gap-6 px-6 py-6 md:grid-cols-2">
           <div className="flex flex-col items-center gap-3">
-            <div className="w-full max-w-sm rounded-xl bg-muted/30 p-3">
-              <canvas ref={canvasRef} className="h-auto w-full rounded-lg" />
+            <div className="w-full max-w-sm overflow-hidden">
+              <canvas ref={canvasRef} className="h-auto w-full" />
             </div>
             {rendering && <p className="text-xs text-muted-foreground">Gerando prévia...</p>}
             {error && <p className="text-xs text-destructive">{error}</p>}
@@ -156,11 +156,11 @@ export function QrPreviewDialog({
             <div>
               <h3 className="text-sm font-semibold text-foreground">Escolha a arte</h3>
               <p className="text-xs text-muted-foreground">
-                O QR code é aplicado na arte selecionada.
+                Escolha um dos modelos anexados para aplicar o QR code e baixar a imagem.
               </p>
             </div>
 
-            <div className="grid gap-2">
+            <div className="grid gap-3">
               {QR_ART_TEMPLATES.map((template) => {
                 const active = template.id === templateId;
                 return (
@@ -175,15 +175,16 @@ export function QrPreviewDialog({
                         : "border-border bg-card hover:border-primary/50"
                     }`}
                   >
-                    <span
-                      className={`h-10 w-10 shrink-0 rounded-lg ${template.thumbnailClass}`}
-                      style={{ borderColor: active ? brandColor : undefined }}
+                    <img
+                      src={template.imageSrc}
+                      alt={`Prévia da arte ${template.name}`}
+                      className="h-16 w-16 shrink-0 rounded-lg object-cover object-center"
                     />
                     <span className="min-w-0">
                       <span className="block text-sm font-medium text-foreground">
                         {template.name}
                       </span>
-                      <span className="block truncate text-xs text-muted-foreground">
+                      <span className="block text-xs text-muted-foreground">
                         {template.description}
                       </span>
                     </span>
