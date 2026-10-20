@@ -145,7 +145,7 @@ export function QrPreviewDialog({
 
         <div className="grid gap-6 px-6 py-6 md:grid-cols-2">
           <div className="flex flex-col items-center gap-3">
-            <div className="w-full max-w-sm rounded-xl border border-border bg-muted/30 p-3">
+            <div className="w-full max-w-sm rounded-xl bg-muted/30 p-3">
               <canvas ref={canvasRef} className="h-auto w-full rounded-lg" />
             </div>
             {rendering && <p className="text-xs text-muted-foreground">Gerando prévia...</p>}

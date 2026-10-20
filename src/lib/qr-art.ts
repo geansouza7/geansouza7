@@ -74,11 +74,6 @@ export const QR_ART_TEMPLATES: QrArtTemplate[] = [
       ctx.fillStyle = "#ffffff";
       ctx.fillRect(0, 0, size, size);
 
-      ctx.strokeStyle = data.brandColor;
-      ctx.lineWidth = size * 0.022;
-      roundRect(ctx, size * 0.045, size * 0.045, size * 0.91, size * 0.91, size * 0.05);
-      ctx.stroke();
-
       ctx.textAlign = "center";
       ctx.textBaseline = "middle";
 
@@ -247,7 +242,7 @@ export async function renderQrArtToCanvas(
   const qrCanvas = document.createElement("canvas");
   await QRCode.toCanvas(qrCanvas, options.value || " ", {
     width: Math.round(size * 0.8),
-    margin: 1,
+    margin: 0,
     color: { dark: "#0f172a", light: "#ffffff" },
   });
 
