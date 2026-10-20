@@ -95,7 +95,7 @@ export const QR_ART_TEMPLATES: QrArtTemplate[] = [
     imageSrc: "/uploads/QR074_1_.png",
     thumbnailClass: "bg-gradient-to-br from-orange-400 via-pink-500 to-fuchsia-600",
     qrRect: { x: 0.674, y: 0.665, width: 0.23, height: 0.23 },
-    clearQrRect: { x: 0.63, y: 0.63, width: 0.32, height: 0.29 },
+    clearQrRect: { x: 0.674, y: 0.63, width: 0.23, height: 0.29 },
     render: (ctx, width, height, data) => {
       drawUploadedArt(
         ctx,
@@ -114,7 +114,7 @@ export const QR_ART_TEMPLATES: QrArtTemplate[] = [
     imageSrc: "/uploads/QR074.png",
     thumbnailClass: "bg-white",
     qrRect: { x: 0.681, y: 0.667, width: 0.247, height: 0.247 },
-    clearQrRect: { x: 0.635, y: 0.62, width: 0.34, height: 0.32 },
+    clearQrRect: { x: 0.681, y: 0.62, width: 0.247, height: 0.32 },
     render: (ctx, width, height, data) => {
       drawUploadedArt(
         ctx,
