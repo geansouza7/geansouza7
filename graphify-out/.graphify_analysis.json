@@ -1,0 +1,136 @@
+{
+  "communities": {
+    "0": [
+      "ref_qrcode",
+      "src_lib_qr_art",
+      "src_lib_qr_art_drawuploadedart",
+      "src_lib_qr_art_qr_art_height",
+      "src_lib_qr_art_qr_art_size",
+      "src_lib_qr_art_qr_art_width",
+      "src_lib_qr_art_qrartdata",
+      "src_lib_qr_art_qrartrect",
+      "src_lib_qr_art_qrarttemplate",
+      "src_lib_qr_art_renderqrartoptions"
+    ],
+    "1": [
+      "ref_integrations",
+      "ref_tanstack_react_router",
+      "src_routes_qr_preview",
+      "src_routes_qr_preview_buildqrvalue",
+      "src_routes_qr_preview_qrpreviewpage",
+      "src_routes_qr_preview_qrrow",
+      "src_routes_qr_preview_route"
+    ],
+    "2": [
+      "ref_react",
+      "src_components_qr_qrpreviewdialog",
+      "src_components_qr_qrpreviewdialog_qrpreviewdialogprops",
+      "src_components_qr_qrpreviewdialog_qrpreviewitem",
+      "src_lib_qr_art_qr_art_templates"
+    ],
+    "3": [
+      "src_components_qr_qrpreviewdialog_qrpreviewdialog",
+      "src_lib_qr_art_downloadqrart",
+      "src_lib_qr_art_getqrarttemplate",
+      "src_lib_qr_art_loadimage",
+      "src_lib_qr_art_renderqrarttocanvas"
+    ]
+  },
+  "cohesion": {
+    "0": 0.2,
+    "1": 0.3333333333333333,
+    "2": 0.4,
+    "3": 0.5
+  },
+  "gods": [
+    {
+      "id": "src_lib_qr_art_renderqrarttocanvas",
+      "label": "renderQrArtToCanvas()",
+      "degree": 6
+    },
+    {
+      "id": "src_components_qr_qrpreviewdialog_qrpreviewdialog",
+      "label": "QrPreviewDialog()",
+      "degree": 5
+    },
+    {
+      "id": "src_lib_qr_art_downloadqrart",
+      "label": "downloadQrArt()",
+      "degree": 4
+    },
+    {
+      "id": "src_routes_qr_preview_qrpreviewpage",
+      "label": "QrPreviewPage()",
+      "degree": 3
+    },
+    {
+      "id": "src_components_qr_qrpreviewdialog_qrpreviewitem",
+      "label": "QrPreviewItem",
+      "degree": 2
+    },
+    {
+      "id": "src_lib_qr_art_qr_art_templates",
+      "label": "QR_ART_TEMPLATES",
+      "degree": 2
+    },
+    {
+      "id": "src_lib_qr_art_getqrarttemplate",
+      "label": "getQrArtTemplate()",
+      "degree": 2
+    },
+    {
+      "id": "src_lib_qr_art_loadimage",
+      "label": "loadImage()",
+      "degree": 2
+    },
+    {
+      "id": "src_routes_qr_preview_buildqrvalue",
+      "label": "buildQrValue()",
+      "degree": 2
+    },
+    {
+      "id": "src_components_qr_qrpreviewdialog_qrpreviewdialogprops",
+      "label": "QrPreviewDialogProps",
+      "degree": 1
+    }
+  ],
+  "surprises": [
+    {
+      "source": "QrPreviewPage()",
+      "target": "QrPreviewDialog()",
+      "source_files": [
+        "src/routes/qr-preview.tsx",
+        "src/components/qr/QrPreviewDialog.tsx"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "calls",
+      "why": "bridges separate communities"
+    },
+    {
+      "source": "QrPreviewDialog()",
+      "target": "downloadQrArt()",
+      "source_files": [
+        "src/components/qr/QrPreviewDialog.tsx",
+        "src/lib/qr-art.ts"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "calls",
+      "why": "cross-file semantic connection"
+    },
+    {
+      "source": "QrPreviewDialog()",
+      "target": "renderQrArtToCanvas()",
+      "source_files": [
+        "src/components/qr/QrPreviewDialog.tsx",
+        "src/lib/qr-art.ts"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "calls",
+      "why": "cross-file semantic connection"
+    }
+  ],
+  "tokens": {
+    "input": 0,
+    "output": 0
+  }
+}
